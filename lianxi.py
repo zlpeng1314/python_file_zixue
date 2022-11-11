@@ -309,12 +309,28 @@ print(f(5))   #打印递归函数f（5）的值，结果是120
 def f(n):
     print('\tn =', n)  #打印n的当前值
     if n == 1:
-        print('Returning...')
-        print('\tn =', n, 'return:', 1)
+        print('Returning...')   #返回中
+        print('\tn =', n, 'return:', 1) #打印n = x,返回值是：x
         return 1
     else:
-        r = n * f(n-1)
-        print('\tn =', n, 'return:', r)
+        r = n * f(n-1)     #阶乘的计算方法
+        print('\tn =', n, 'return:', r)  #打印：n = x，返回值是阶乘的算法
         return r
-print('Call f(5)...')
-print('Get out of f(n), and f(5) =', f(5))
+print('Call f(5)...')    #调用f(5)
+print('Get out of f(n), and f(5) =', f(5))  #跳出f（5),f(5)的值是120
+
+import random
+def in_dream(day=0, dead=False, kicked=False): #设定函数的初始状态
+    dead = not random.randrange(0, 10)   #给dead设定一个随机数，不属于0-9
+    kicked = not random.randrange(0, 10) #给kicked 设定一个随机数，不属于0-9
+    day += 1   #天数加1
+    print('dead:', dead, 'kicked:', kicked)  #打印dead 和kicked的 布尔值
+
+    if dead:  #如果dead为真，即在梦里死掉  ，打印字符串
+        print(f"I slept {day} days, and was dead to wake up...")
+        return day   #返回dead为真的day的值，即天数
+    elif kicked:#如果kicked为真，即在梦里被踢出来，打印字符串
+        print(f"I slept {day} days, and was kicked to wake up ...")
+        return day   #返回kicked为真的day的值，即天数
+    return in_dream(day)  #返回函数的天数
+print('The in_dream() function returns:', in_dream())

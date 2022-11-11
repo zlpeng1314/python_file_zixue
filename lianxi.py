@@ -297,7 +297,7 @@ pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 pairs.sort(key=lambda p: p[1])   #sort（）函数是用来排序的，key是排序的对象
 print(pairs)  #输出结果：[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 
-#2022年11月11日   学习记录  递归函数 ： n 的阶乘演示
+#2022年11月11日   学习记录  递归函数 ： n 的阶乘演示1
 def f(n):
     if n == 1:
         return 1   #如果n=1，返回1
@@ -319,6 +319,7 @@ def f(n):
 print('Call f(5)...')    #调用f(5)
 print('Get out of f(n), and f(5) =', f(5))  #跳出f（5),f(5)的值是120
 
+#盗梦空间的递归示范 2
 import random
 def in_dream(day=0, dead=False, kicked=False): #设定函数的初始状态
     dead = not random.randrange(0, 10)   #给dead设定一个随机数，不属于0-9

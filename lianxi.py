@@ -319,7 +319,7 @@ def f(n):
 print('Call f(5)...')    #调用f(5)
 print('Get out of f(n), and f(5) =', f(5))  #跳出f（5),f(5)的值是120
 
-#盗梦空间的递归示范 2
+#盗梦空间的递归示范 2   p183
 import random
 def in_dream(day=0, dead=False, kicked=False): #设定函数的初始状态
     dead = not random.randrange(0, 10)   #给dead设定一个随机数，不属于0-9
@@ -335,3 +335,7 @@ def in_dream(day=0, dead=False, kicked=False): #设定函数的初始状态
         return day   #返回kicked为真的day的值，即天数
     return in_dream(day)  #返回函数的天数
 print('The in_dream() function returns:', in_dream())
+
+
+
+

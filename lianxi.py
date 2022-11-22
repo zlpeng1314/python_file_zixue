@@ -335,6 +335,27 @@ def in_dream(day=0, dead=False, kicked=False): #设定函数的初始状态
         return day   #返回kicked为真的day的值，即天数
     return in_dream(day)  #返回函数的天数
 print('The in_dream() function returns:', in_dream())
+print()
+
+#2022年11月18日  python学习记录 
+# 函数的文档示范  p190
+def is_prime(n):
+    """
+    Return a boolean value based upon   #返回一个布尔值
+    whether the argumentn is a prime number.   #参数n是否为质数
+    """
+    if n < 2:
+        return False
+        if n == 2:
+            return True
+        for m in range(2, int(n**0.5)+1):
+            if (n % m) == 0:
+                return False
+        else:
+            return Ture
+help(is_prime)
+print(is_prime.__doc__)
+is_prime.__doc__
 
 
 

@@ -426,7 +426,22 @@ print(mycode.__name__)
 print(mycode.is_prime(3))
 mycode.say_hi('mike', 'zoe')
 
+#2022年12月1日 python学习记录
+# 模块文件系统目录检索顺序
+# 查找系统文件路径示范 p198
+import sys   #导入系统文件
+sys.path     #系统文件.路径  返回结果中当前工作目录排在第一位
 
+# 指定检索目录示范 p198
+import sys
+sys.path.append("D:\python file")  #知道文件的目录就可以用这个方法查找
+
+# 系统内建的模块
+import sys   #导入系统文件
+print(sys.builtin_module_names)  #打印（系统文件.内建指令.模块.名称）
+print("_sre" in sys.builtin_module_names)  # 结果是True
+print("math" in sys.builtin_module_names)  # 书上结果是False，但是运行结果是True
+print("maath" in sys.builtin_module_names) # 结果是False
 
 
 

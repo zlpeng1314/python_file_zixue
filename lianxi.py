@@ -357,6 +357,76 @@ help(is_prime)
 print(is_prime.__doc__)
 is_prime.__doc__
 
+#2022.11.26 sphinx 版本的 Docstring 规范  示范 p193
+class Vehicle(object):     #把交通工具归类（对象）
+    '''
+    The Vehicle object contains lots of vehicles  #交通对象包含大量车辆
+    :param arg: The arg is used for ...Vehicle    #arg类型的参数用于...车辆
+    :type arg str   #自变量类型 str
+    :param `*args`: The variable arguments are used for ...  #变量参数用于...
+    :param `**kwargs`: The keyword arguments are used for ...  #关键字参数用于
+    :ivar arg:This is where we store arg  #我们存储arg的地方
+    :vartype arg: str   #变量类型参数str
+    '''
+
+    def __init__(self, arg, *args, **kwargs):
+        self.arg = arg
+
+    def cars(self, distance, destination):
+        '''We can't travel a certain distance in vehicles without fuels, so here's the fuels
+           #没有燃料，我们的汽车无法行驶一定的距离，所以这就是燃料
+        :param distance: The amount of distance traveledam   #移动的距离
+        :type amount: int   #变量类型：int
+        :param bool destinationReached: Should the fuels be refilled to cover requires distance?  #燃料是否需要补充到需要的距离?
+        ：raises: :class:`RuntimeError`: out of fuel  #培养 ：把...归类 ：运行时出错：燃料短缺
+
+        :returns: A Car mileage   #返回值：A汽车旅程
+        :rtype: Cars    #    ：汽车
+        '''
+        pass
+help(Vehicle)
+
+#2022年11月29日  python学习记录
+#创建一个包含自定义函数的模块mycode
+def is_prime(n):
+    """
+    Return a boolean value based upon  #返回一个布尔值
+    whether the argumet n is a prime number. # 参数n是否是质数
+    """
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    for m in range(2, int(n**0.5)+1):
+        if (n % m) == 0:
+            return False
+    else:
+        return True
+def say_hi(*names, greeting='Hello', capotalized=False):
+    """
+    Print a string, with a greeting to everyone. #打印一个包括每个人的问候语的字符串。
+    :param *names: tuple of names to be greeted. #一个要问候的名字的元组。
+    :param greeting:  'Hello' as default. # 默认为'Hello'。
+    :param capotalized:  Whether name should be converted to capitalized before print. False as default.  #是否在打印前将名字转换为大写字母，默认为false。
+    :return: None
+    """
+    for name in names:
+        if capotalized:
+            name = name.capitalize()
+        print(f'{greeting}, {name}!')
+print()
+
+#2022.11.29日导入包含自定义函数的模块mycode 示范 p197
+import mycode
+
+help(mycode.is_prime)
+help(mycode.say_hi)
+
+print(mycode.__name__)
+print(mycode.is_prime(3))
+mycode.say_hi('mike', 'zoe')
+
+
 
 
 

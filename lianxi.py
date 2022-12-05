@@ -442,6 +442,19 @@ print(sys.builtin_module_names)  #打印（系统文件.内建指令.模块.名�
 print("_sre" in sys.builtin_module_names)  # 结果是True
 print("math" in sys.builtin_module_names)  # 书上结果是False，但是运行结果是True
 print("maath" in sys.builtin_module_names) # 结果是False
+print()
 
+#2022年12月3日python学习记录
+#引入指定模块中的特定函数示范1  p199
+import mycode  #会向当前工作空间引入mycode文件中的自定义的所有函数，相当于from mycode import *
+from mycode import is_prime #这样写引入当前需要的自定义函数，如is_prime，不必使用mycode.is_prime（）了
+print(is_prime(3))  #我们可以像这个函数就写在当前工作空间中一样，直接写is_prime（）函数
+
+#引入指定模块中的特定函数示范2  p200
+import foo.bar  #导入foo目录中的模块文件bar.py  *这句代码在pycharm里会报错。
+from foo import bar #第二种写法  *这种写法在pycharm里不会报错
+#上面这行代码的导入的名为：foo的文件夹，必须和调用它的.py文件在同一个文件夹类   2022年12月5日学习记录
+help(bar.qqq)
+print(bar.qqq(3))
 
 

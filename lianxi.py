@@ -457,4 +457,10 @@ from foo import bar #第二种写法  *这种写法在pycharm里不会报错
 help(bar.qqq)
 print(bar.qqq(3))
 
-
+#2022年12月5日python学习记录
+import sys  #导入系统文件
+sys.path.append("D:\python file")  #添加一个自定义的搜索位置
+from 临时 import qqq     #从D:\python file 文件夹的临时.py文件中导入自定义函数qqq
+print(qqq(3))   #打印自定义函数qqq（3）的返回值，结果是True
+print()
+help(qqq)       #打印自定义函数qqq的帮助文件

@@ -464,3 +464,13 @@ from 临时 import qqq     #从D:\python file 文件夹的临时.py文件中导�
 print(qqq(3))   #打印自定义函数qqq（3）的返回值，结果是True
 print()
 help(qqq)       #打印自定义函数qqq的帮助文件
+
+#引入并使用化名 p200
+#给调用的函数取化名
+from mycode import is_prime as isp #从mycode模块导入自定义import，并为之取化名isp
+isp(3)
+
+#也可以直接给调用的模块取化名 p200
+import mycode as m  #给导入的模块mycode取化名为m
+m.is_prime(3)
+m.say_hi('mike', 'zoe')

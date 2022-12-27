@@ -474,3 +474,65 @@ isp(3)
 import mycode as m  #给导入的模块mycode取化名为m
 m.is_prime(3)
 m.say_hi('mike', 'zoe')
+print()
+
+import this
+print(this)
+
+#2022年12月26日  学习记录
+#测试驱动开发的案例示范，计算闰年的方法
+def is_leap(year):
+    r = False
+    if year % 4 == 0:
+        r = True
+        if year % 100 == 0:
+            if year % 400 != 0:
+                r = False
+    return r
+
+
+#以下代码的结果应该都是True，否则就是代码有误
+print(is_leap(4) is True)     
+print(is_leap(200) is False)  
+print(is_leap(220) is True) 
+print(is_leap(400) is True) 
+
+#2022.12.27python学习记录
+#打开一个文件之前，应该前提验证这个文件是否存在，如果文件不存在，就会发生意外
+f = open('test_file', 'r')  #由于文件不存在，这句会报错
+
+#可以使用try语句块去执行那些可能出现“意外”的语句，try可以配合except、else、finally使用
+#try是一种特殊的流程控制机制，专注于“当意外发生时应该怎么办”
+try:
+    f = open('test_file.txt', 'r')
+except FileNotFoundError as fnf_error:
+    print(fnf_error)
+
+#可以使用的试错流程还有以下变种：
+try:
+    do_something()
+except built_in_error as name_of_error:
+    do_something()
+else:
+    do_something()
+
+#或者
+try:
+    do_something()
+except built_in_error as name_of_error:
+    do_something()
+else:
+    do_something()
+finally:
+    do_something()
+
+#甚至可以使用嵌套语句：
+try:
+    do_something()
+except built_in_error as name_of_error:
+    do_something()
+else:
+    try:
+        do_something()
+    except built_in_error as name_of_error:
+        do_something()
